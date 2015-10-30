@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 46345881be5e80c4e9da6e1fe53971cf
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Baccarat-Atlas_0
+    21300002: Baccarat-Atlas_1
+    21300004: Baccarat-Atlas_2
+    21300006: Baccarat-Atlas_3
+    21300008: Baccarat-Atlas_4
+    21300010: Baccarat-Atlas_5
+    21300012: Baccarat-Atlas_6
+    21300014: Baccarat-Atlas_7
+    21300016: Baccarat-Atlas_8
+    21300018: Baccarat-Atlas_9
+    21300020: Baccarat-Atlas_10
+    21300022: Baccarat-Atlas_11
+    21300024: Baccarat-Atlas_12
+    21300026: Baccarat-Atlas_13
+    21300028: Baccarat-Atlas_14
+    21300030: Baccarat-Atlas_15
+    21300032: Baccarat-Atlas_16
+    21300034: Baccarat-Atlas_17
+    21300036: Baccarat-Atlas_18
+    21300038: Baccarat-Atlas_19
+    21300040: Baccarat-Atlas_20
+    21300042: Baccarat-Atlas_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Baccarat-Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 967
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1003
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 997
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 997
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 987
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 987
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 987
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 966
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 966
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 966
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 805
+        width: 221
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 805
+        width: 110
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 805
+        width: 221
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 805
+        width: 59
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 805
+        width: 39
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 161
+        width: 110
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 110
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 110
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 105
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 84
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 84
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Baccarat-Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 63
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
