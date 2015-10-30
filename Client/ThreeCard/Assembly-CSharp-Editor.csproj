@@ -60,10 +60,10 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>F:/workspace/unity/ThreeCard/Assets/DOTween/DOTween.dll</HintPath>
+ <HintPath>F:/workspace/unity/ThreeCard/Client/ThreeCard/Assets/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenEditor">
- <HintPath>F:/workspace/unity/ThreeCard/Assets/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ <HintPath>F:/workspace/unity/ThreeCard/Client/ThreeCard/Assets/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
