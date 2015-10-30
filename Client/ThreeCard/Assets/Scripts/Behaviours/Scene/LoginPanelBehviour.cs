@@ -40,12 +40,7 @@ public class LoginPanelBehviour : MonoBehaviour {
 		EventTriggerListener.Get(Btn_Login.gameObject).onClick =Btn_LoginClick;
 
 
-
-		UnityEngine.Object obj = Resources.Load("Prefabs/Effects/JH_Eff_Special_Backpack_RoleHalo");
-		GameObject  instance = Instantiate(obj) as GameObject;
-		instance.transform.parent  = this.transform;
-		instance.transform.localScale = Vector3.one; 
-		instance.transform.localPosition = Vector3.zero;
+		Txt_Name.text = PlayerPrefs.GetString("nickName");
 	}
 
 

@@ -47,7 +47,6 @@ public class FightPanelBehviour : MonoBehaviour {
 
 	/**充值按钮**/
 	public Button	Btn_Charge;
-	public Text Txt_Charge;//充值数目
 	/**下注确定按钮**/
 	public Button	Btn_BetOk;
 
@@ -155,26 +154,10 @@ public class FightPanelBehviour : MonoBehaviour {
 
 
 	/**
-	 * 充值处理
+	 * 充值场景跳转
 	 * */
 	private void Btn_ChargeClick(GameObject go){
-		//在这里监听按钮的点击事件
-		if(go == Btn_Charge.gameObject){
-			int Money = int.Parse( Txt_Charge.text );
-			if(Money > 0 ){
-				FightModel.getInstance().ChargeAction(Money,betChargeCallBack);
-			}else{
-				PopMessageManager.show("Money is 0");
-			}
-
-		}
-	}
-	void betChargeCallBack(object obj){
-		int result = (int)obj;
-		if(result == Config.CODE_SUCCESS){
-			Txt_Money_My.text = UserModel.getInstance().UserVo.Money.ToString();
-			PopMessageManager.show("charge is ok");
-		}
+		Application.LoadLevel(SceneConfig.SceneSet);
 	}
 
 

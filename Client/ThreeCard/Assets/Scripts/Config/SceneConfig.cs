@@ -14,7 +14,8 @@ public class SceneConfig : MonoBehaviour
 	public static int SceneLevelLogin = 0;
 	/**战斗场景**/
 	public static int SceneLevelFight = 1;
-
+	/**设置场景**/
+	public static int SceneSet = 2;
 
 }
 

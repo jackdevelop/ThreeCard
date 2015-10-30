@@ -59,7 +59,7 @@ public class UserModel {
 		Dictionary<string,object> param = new Dictionary<string,object>();
 		//param.Add("Action","LoginAction");
 		param.Add("username",userName);
-		param.Add("password",Util.getMD5CodeByString(passWorld));
+		param.Add("password",passWorld);//Util.getMD5CodeByString(passWorld));
 		param.Add("macAddress",Util.getUserIp());
 		param.Add("ipAddress",Util.getUserIp());
 
@@ -79,13 +79,17 @@ public class UserModel {
 		};
 		**/
 
+		PopMaskMaskManager.show (0.5f);
 		//测试Action委托
-		//Action<object> action;
 		Action<object,object> actionFun;
 		actionFun = (object data,object str) => {
 			userVo = (UserVo)data;
-			int result = userVo.result;//System.Convert.ToInt32( data["Result"] );
+			int result =  userVo.result;//System.Convert.ToInt32( data["Result"] );
+			PopMaskMaskManager.hide();
 			if(result == Config.CODE_SUCCESS){
+				userVo.nickName = "张三";
+				userVo.userName = userName;
+				PlayerPrefs.SetString("nickName",userVo.nickName);
 				if(callBack != null ) callBack(result,str);
 			}else if(result == 1){
 				PopMessageManager.show("username is error");

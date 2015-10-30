@@ -92,10 +92,30 @@ public class PopMessageManager  {
 		panelMessageBehaviours.createItem(msg);
 
 	}
-
 }
 
 
+
+
+
+
+/**
+* PopAlertManager
+*   Alert 的提示管理静态类
+* 
+* @author  jack   jackdevelop@sina.com
+* @date  2015-9-6 上午10:05
+* @version 1.1
+*/
+public class PopAlertManager  {
+
+	/**
+	 * 显示 创建  
+	 * */
+	public static void show(string title,string msg){
+		PanelAlertBehaviours.show (title,msg);
+	}
+}
 
 
 

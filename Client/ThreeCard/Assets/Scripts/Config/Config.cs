@@ -19,7 +19,7 @@ public class Config  {
 	public const int CODE_SUCCESS = 0;
 	public const int CODE_Remote_login = -1;//1：用户异地登陆，须管理员先注销上次登陆ip，
 	public const int CODE_Token_Error = -2;//-2：Token不正确
-
+	public const int CODE_WWW_Error = -100;//网络错误
 
 
 	/**游戏di**/

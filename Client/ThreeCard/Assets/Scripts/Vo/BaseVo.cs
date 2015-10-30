@@ -30,7 +30,7 @@ public class BaseVo {
 	public string msg{ set; get;}
 
 
-	public bool wwwError{ set; get; }
+
 
 	/**
 	 * 反射初始化类型 

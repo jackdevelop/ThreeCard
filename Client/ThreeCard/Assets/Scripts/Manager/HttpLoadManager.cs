@@ -118,32 +118,41 @@ public class HttpLoadManager : MonoBehaviour
 			}
 		}
 
-		/**
-		//这是get请求的头参数 
-		Hashtable headers = new Hashtable();  
-		headers.Add("Content-Type","application/json"); 
-		headers.Add("Authorization","08n3N9IHVb4IMvmYHtiQnNrZ"); 
-		**/
+		
+		
 
-		WWW www = new WWW(url, form);     
+		//第一种方法
+		//这是get请求的头参数 
+		Hashtable headers = form.headers;  
+		if(param.ContainsKey("token"))
+			headers.Add("Authorization",param["token"]);
+
+		WWW www = new WWW(url, form.data,headers);     
+
+		//第二种方法 
+		//WWW www = new WWW(url, form);     
+
 		yield return www;     
 		if (www.isDone) {
+			string data = "";
 			if (www.error != null) {
-					PopMessageManager.show ("www error !" + www.error);//POST请求失败   
-					Echo.Log ("error is :" + www.error);
+				data = "{'result':-100,'msg':'"+ www.error +"'}";
 			} else {
+				data= www.text;
+			}
 
-				if (callBack != null) {
-					string data = www.text;
-					Echo.Log("callBack:" + data);
 
-					T t = JsonMapper.ToObject<T> (data);
-					Filter (t);
-					callBack (t,data);
 
-				}
-			}   
+			if (callBack != null) {
+				Echo.Log("callBack:" + data);
+				
+				T t = JsonMapper.ToObject<T> (data);
+				Filter (t);
+				callBack (t,data);
+			}
 		}
+
+
 	}     
 	
 	//GET请求     
@@ -176,13 +185,17 @@ public class HttpLoadManager : MonoBehaviour
 		BaseVo baseVo = (BaseVo)data;
 		int code = baseVo.result;
 		
-		if(code == Config.CODE_SUCCESS){
-			return;
-		}else if(code == Config.CODE_Remote_login){//异地登录
-			PopMessageManager.show("remote login ");
-		}else if(code == Config.CODE_Token_Error){//token 不正确
-			PopMessageManager.show("token error ");
+		if (code == Config.CODE_SUCCESS) {
+				return;
+		} else if (code == Config.CODE_Remote_login) {//异地登录
+				PopMessageManager.show ("remote login ");
+		} else if (code == Config.CODE_Token_Error) {//token 不正确
+				PopMessageManager.show ("token error ");
+		} else if (code == Config.CODE_WWW_Error) {
+			PopMessageManager.show ("www error !" + baseVo.msg);//POST请求失败   
+			Echo.Log ("error is :" + baseVo.msg);
 		}
+
 	}
 
 	private void FilterJson(JsonData json)     
