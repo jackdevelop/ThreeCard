@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{1CFA150C-A89C-1AA1-D63F-5DC92C128E88}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\LitJson\IJsonWrapper.cs" />
+     <Compile Include="Assets\LitJson\JsonData.cs" />
+     <Compile Include="Assets\LitJson\JsonException.cs" />
+     <Compile Include="Assets\LitJson\JsonMapper.cs" />
+     <Compile Include="Assets\LitJson\JsonMockWrapper.cs" />
+     <Compile Include="Assets\LitJson\JsonReader.cs" />
+     <Compile Include="Assets\LitJson\JsonWriter.cs" />
+     <Compile Include="Assets\LitJson\Lexer.cs" />
+     <Compile Include="Assets\LitJson\ParserToken.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\FullScreenBehviour.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\PanelMaskBehaviours.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\PanelMessageBehaviours.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\RootCanvasBehviour.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\RootObjectBehaviours.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\UI\BaseUIBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\CommonUI\UI\UIButton.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\Scene\LoginPanelBehviour.cs" />
+     <Compile Include="Assets\Scripts\Config\Config.cs" />
+     <Compile Include="Assets\Scripts\Config\EventName.cs" />
+     <Compile Include="Assets\Scripts\Config\SceneConfig.cs" />
+     <Compile Include="Assets\Scripts\Manager\HttpLoad.cs" />
+     <Compile Include="Assets\Scripts\Manager\HttpLoadManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\PopManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\ResourcesManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\SingletonManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\TimerItem.cs" />
+     <Compile Include="Assets\Scripts\Manager\TimerManager.cs" />
+     <Compile Include="Assets\Scripts\Model\FightModel.cs" />
+     <Compile Include="Assets\Scripts\Model\UserModel.cs" />
+     <Compile Include="Assets\Scripts\Test\test.cs" />
+     <Compile Include="Assets\Scripts\Utils\CardUtil.cs" />
+     <Compile Include="Assets\Scripts\Utils\Echo.cs" />
+     <Compile Include="Assets\Scripts\Utils\Event\EventProtocol.cs" />
+     <Compile Include="Assets\Scripts\Utils\Event\UEvent.cs" />
+     <Compile Include="Assets\Scripts\Utils\Event\UEventDispatcher.cs" />
+     <Compile Include="Assets\Scripts\Utils\Event\UEventListener.cs" />
+     <Compile Include="Assets\Scripts\Utils\EventTriggerListener.cs" />
+     <Compile Include="Assets\Scripts\Utils\Platform.cs" />
+     <Compile Include="Assets\Scripts\Utils\UITool.cs" />
+     <Compile Include="Assets\Scripts\Utils\Util.cs" />
+     <Compile Include="Assets\Scripts\Vo\BaseVo.cs" />
+     <Compile Include="Assets\Scripts\Vo\BetVo.cs" />
+     <Compile Include="Assets\Scripts\Vo\FightVo.cs" />
+     <Compile Include="Assets\Scripts\Vo\UserVo.cs" />
+     <None Include="Assets\DOTween\readme.txt" />
+     <None Include="Assets\Shaders\UI\UIButton.shader" />
+     <None Include="Assets\Docment\说明.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>F:/workspace/unity/ThreeCard/Assets/DOTween/DOTween.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
