@@ -1,0 +1,39 @@
+
+http://game_machine.meteor.com/
+long
+game_machine.
+
+
+
+
+1. 登陆
+GET /api/v1/login
+HTTP HEADER: "Content-Type: application/json"
+
+返回结果：用户id，money，以及API token，token 用于调用下列 api
+
+curl -X GET localhost:3000/api/v1/login -H "Content-Type: application/json" -d '{"username": "long", "password": "game_machine."}'
+
+
+
+
+2. 下注
+PATCH /api/v1/users/bet
+HTTP HEADER: "Content-Type: application/json" "Authorization: [Token]"
+curl -X PATCH localhost:3000/api/v1/users/bet -H "Content-Type: application/json" -H "Authorization: 08n3N9IHVb4IMvmYHtiQnNrZ" -d '{"gameId": 0, "betAmount": 100}'
+
+
+
+
+3. 结算
+PATCH /api/v1/users/balance
+HTTP HEADER: "Content-Type: application/json" "Authorization: [Token]"
+curl -X PATCH localhost:3000/api/v1/users/balance -H "Content-Type: application/json" -H "Authorization: 08n3N9IHVb4IMvmYHtiQnNrZ"
+
+
+
+
+4. 充值
+PATCH /api/v1/users/charge
+HTTP HEADER: "Content-Type: application/json" "Authorization: [Token]"
+curl -X PATCH localhost:3000/api/v1/users/charge -H "Content-Type: application/json" -H "Authorization: 08n3N9IHVb4IMvmYHtiQnNrZ" -d '{"money": 100}'
