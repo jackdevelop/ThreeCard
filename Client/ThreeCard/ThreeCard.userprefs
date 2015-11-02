@@ -1,17 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\HttpLoadManager.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\BattleUI\DefenseEctypeUI\DefenceEntryManager_V1.cs">
     <Files>
-      <File FileName="Assets\Scripts\Behaviours\CommonUI\PanelAlertBehaviours.cs" Line="51" Column="7" />
-      <File FileName="Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" Line="156" Column="2" />
-      <File FileName="Assets\Scripts\Behaviours\CommonUI\PanelMaskBehaviours.cs" Line="25" Column="36" />
-      <File FileName="Assets\Scripts\Behaviours\CommonUI\PanelMessageBehaviours.cs" Line="63" Column="13" />
-      <File FileName="Assets\Scripts\Behaviours\Scene\SetPanelBehviour.cs" Line="61" Column="6" />
-      <File FileName="Assets\Scripts\Manager\HttpLoadManager.cs" Line="139" Column="51" />
+      <File FileName="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\BattleUI\DefenseEctypeUI\DefenceEntryManager_V1.cs" Line="83" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="30" />
+      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="6" />
+      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="33" />
+      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="37" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -34,13 +34,30 @@ public class SetPanelBehviour : MonoBehaviour {
 	/**结算按钮**/
 	public Button	Btn_Balance;
 
+	/**返回按钮**/
+	public Button	Btn_Back;
 
 
 	void Awake() {
 		Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
+
 		//Btn_Login = transform.Find("Btn_Login").GetComponent<Button>();//可以通过面板去查找 
 		EventTriggerListener.Get(Btn_Charge.gameObject).onClick =Btn_ChargeClick;
 		EventTriggerListener.Get(Btn_Balance.gameObject).onClick =Btn_BalancClick;
+		EventTriggerListener.Get(Btn_Back.gameObject).onClick =Btn_BackClick;
+	}
+
+
+
+
+	/**
+	 * 返回按钮结算 
+	 * */
+	private void Btn_BackClick(GameObject go){
+		//在这里监听按钮的点击事件
+		if(go == Btn_Back.gameObject){
+			Application.LoadLevel(SceneConfig.SceneLevelFight);
+		}
 	}
 
 
@@ -89,7 +106,7 @@ public class SetPanelBehviour : MonoBehaviour {
 			Txt_Money_My.text = UserModel.getInstance().UserVo.money.ToString();
 			PopMessageManager.show("charge is ok");
 
-			Application.LoadLevel(SceneConfig.SceneLevelFight);
+			//Application.LoadLevel(SceneConfig.SceneLevelFight);
 		}
 	}
 

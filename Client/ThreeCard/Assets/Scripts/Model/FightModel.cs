@@ -84,6 +84,7 @@ public class FightModel {
 			betVo = (BetVo)data;
 			int result = betVo.result;//System.Convert.ToInt32( data["Result"] );
 			if(result == Config.CODE_SUCCESS){
+				UserModel.getInstance().UserVo.money = betVo.money;
 				if(callBack != null ) callBack(result,str);
 				return;
 			}else if(result == 1){

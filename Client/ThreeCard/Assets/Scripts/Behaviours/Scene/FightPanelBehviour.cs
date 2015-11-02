@@ -52,17 +52,25 @@ public class FightPanelBehviour : MonoBehaviour {
 
 
 
+	//结算面板 
+	public UnityEngine.Object Obj_FightResult;
+	private FightResultBehviour fightResultBehviour;
 	
 
 	void Awake() {
 		//Btn_Login = transform.Find("Btn_Login").GetComponent<Button>();//可以通过面板去查找 
 		EventTriggerListener.Get(Btn_Charge.gameObject).onClick =Btn_ChargeClick;
 		EventTriggerListener.Get(Btn_BetOk.gameObject).onClick =Btn_BetOkClick;
-		
+
+
 		for(int i =0;i<Btn_BetArr.Length;i++){
 			Button btn = Btn_BetArr[i];
 			EventTriggerListener.Get(btn.gameObject).onClick =Btn_BetClick;
 		}
+
+
+
+		Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
 	}
 
 
@@ -181,6 +189,7 @@ public class FightPanelBehviour : MonoBehaviour {
 		if(result == Config.CODE_SUCCESS){
 			int BenAmount = FightModel.getInstance().getBenAmount();
 
+			/**
 			//生产牌
 			Dictionary<string,List<int>> CardsInfo = FightModel.getInstance().betVo.CardsInfo;
 			List<int> MasterCards = CardsInfo["MasterCards"];MasterCards.Sort();//默认List的排序是升序排序
@@ -202,14 +211,27 @@ public class FightPanelBehviour : MonoBehaviour {
 			int[] compareResult = CardUtil.getCompareCards(MasterCards,GuestCards);
 			Txt_Point_MasterCards.text = compareResult[0] +" 点";
 			Txt_Point_GuestCards.text = compareResult[1] +" 点";
+**/
 
 			PopMaskMaskManager.show(0f);
-
-			StartCoroutine(BetIEnumerator(compareResult[2]));
+			StartCoroutine(BetIEnumerator());
 		}
 	}
-	IEnumerator BetIEnumerator(int GuestWin)
+	IEnumerator BetIEnumerator()
 	{
+
+		yield return new WaitForSeconds(1f);
+		PopMaskMaskManager.hide();
+
+		if(fightResultBehviour == null){
+			GameObject  instance  = PopUpManager.createPopUp (Obj_FightResult,0.5f);
+			fightResultBehviour = instance.GetComponent<FightResultBehviour>();
+			EventTriggerListener.Get(fightResultBehviour.gameObject).onClick =Btn_BackClick;
+		}
+		int LoseAmount = FightModel.getInstance ().betVo.LoseAmount;
+		fightResultBehviour.init (LoseAmount);
+		Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
+		/**
 		//yield return new WaitForSeconds(1f);
 
 		string name = "sprite_failure";
@@ -222,25 +244,35 @@ public class FightPanelBehviour : MonoBehaviour {
 
 		yield return new WaitForSeconds(2f);
 		cleanScene ();
+		**/
 	}
+
+
+
+
+
 
 
 	/**
 	 * 清除场景界面 并清空数据 
 	 * */
-	private void cleanScene(){
-		UITool.ClearChild (Transform_CardSprite_MasterCards);
-		UITool.ClearChild (Transform_CardSprite_GuestCards);
-		UITool.ClearChild (Transform_Bet);
+	private void Btn_BackClick(GameObject go){
+	//public void cleanScene(){
+		if(go == fightResultBehviour.gameObject){
+			UITool.ClearChild (Transform_CardSprite_MasterCards);
+			UITool.ClearChild (Transform_CardSprite_GuestCards);
+			UITool.ClearChild (Transform_Bet);
 
-		//文字清除 
-		Txt_Point_MasterCards.text = "";
-		Txt_Point_GuestCards.text = "";
+			//文字清除 
+			Txt_Point_MasterCards.text = "";
+			Txt_Point_GuestCards.text = "";
 
-		Txt_Current_Bet.text = "";
-		FightModel.getInstance ().setBenAmount (-FightModel.getInstance ().getBenAmount());
+			Txt_Current_Bet.text = "";
+			FightModel.getInstance ().setBenAmount (-FightModel.getInstance ().getBenAmount());
 
-		PopMaskMaskManager.hide();
+			fightResultBehviour.gameObject.SetActive(false);
+		}
+
 	}
 
 

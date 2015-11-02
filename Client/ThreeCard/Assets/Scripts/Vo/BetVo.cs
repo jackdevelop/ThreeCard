@@ -26,6 +26,8 @@ public class BetVo :BaseVo{
 	/**用户输的钱**/
 	public int LoseAmount{set;get;}
 
+	/**用户剩下当前的钱**/
+	public int money{set;get;}
 
 	/**出的牌**/
 	public Dictionary<string,List<int>> CardsInfo{set;get;}
