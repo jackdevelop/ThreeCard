@@ -28,8 +28,8 @@ public class SetPanelBehviour : MonoBehaviour {
 
 	/**充值按钮**/
 	public Button	Btn_Charge;
-	public Text Txt_Charge;//充值数目
-
+	//public Text Txt_Charge;//充值数目
+	public InputField Txt_Charge;
 
 	/**结算按钮**/
 	public Button	Btn_Balance;
@@ -40,7 +40,7 @@ public class SetPanelBehviour : MonoBehaviour {
 
 	void Awake() {
 		Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
-
+		//Txt_Charge.text = "0";
 		//Btn_Login = transform.Find("Btn_Login").GetComponent<Button>();//可以通过面板去查找 
 		EventTriggerListener.Get(Btn_Charge.gameObject).onClick =Btn_ChargeClick;
 		EventTriggerListener.Get(Btn_Balance.gameObject).onClick =Btn_BalancClick;
@@ -68,12 +68,19 @@ public class SetPanelBehviour : MonoBehaviour {
 	private void Btn_BalancClick(GameObject go){
 		//在这里监听按钮的点击事件
 		if(go == Btn_Balance.gameObject){
-			SetModel.getInstance().BalancAction(balancCallBack);
+			int myMoney = UserModel.getInstance().UserVo.money;
+			if(myMoney > 0){
+				SetModel.getInstance().BalancAction(balancCallBack);
+			}else{
+				PopMessageManager.show("当前账户余额必须大于0");
+			}
 		}
 	}
 	void balancCallBack(object obj){
 		int result = (int)obj;
 		if(result == Config.CODE_SUCCESS){
+			Txt_Money_My.text = UserModel.getInstance().UserVo.money.ToString();
+			Txt_Charge.text = "";
 			int ownMoney = SetModel.getInstance().setVo.money;
 			//PopMessageManager.show("结算获得:" + ownMoney);
 
@@ -95,7 +102,7 @@ public class SetPanelBehviour : MonoBehaviour {
 			if(Money > 0 ){
 				SetModel.getInstance().ChargeAction(Money,betChargeCallBack);
 			}else{
-				PopMessageManager.show("Money is 0");
+				PopMessageManager.show("充值金额必须大于0");
 			}
 
 		}
@@ -104,7 +111,8 @@ public class SetPanelBehviour : MonoBehaviour {
 		int result = (int)obj;
 		if(result == Config.CODE_SUCCESS){
 			Txt_Money_My.text = UserModel.getInstance().UserVo.money.ToString();
-			PopMessageManager.show("charge is ok");
+			Txt_Charge.text = "";
+			PopMessageManager.show("充值成功！");
 
 			//Application.LoadLevel(SceneConfig.SceneLevelFight);
 		}

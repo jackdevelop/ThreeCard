@@ -24,12 +24,12 @@ public class BetVo :BaseVo{
 
 
 	/**用户输的钱**/
-	public int LoseAmount{set;get;}
+	public int loseAmount{set;get;}
 
 	/**用户剩下当前的钱**/
 	public int money{set;get;}
 
 	/**出的牌**/
-	public Dictionary<string,List<int>> CardsInfo{set;get;}
+	public Dictionary<string,List<int>> cardsInfo{set;get;}
 
 }

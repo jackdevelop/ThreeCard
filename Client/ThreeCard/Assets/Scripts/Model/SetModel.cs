@@ -47,6 +47,7 @@ public class SetModel {
 			setVo = (SetVo)data;
 			int result = setVo.result;//System.Convert.ToInt32( data["Result"] );
 			if(result == Config.CODE_SUCCESS){
+				UserModel.getInstance().UserVo.money = 0;
 				if(callBack != null ) callBack(result);
 			}
 			
@@ -74,12 +75,12 @@ public class SetModel {
 		//Action<object> action;
 		Action<object,object> action;
 		action = (object data,object str) => {
-			BaseVo baseVo = (BaseVo)data;
+			BaseVo baseVo = data as BaseVo;
 			int result = baseVo.result;//System.Convert.ToInt32( data["Result"] );
 			if(result == Config.CODE_SUCCESS){
 				//UserModel.getInstance().UserVo.money = UserModel.getInstance().UserVo.money + Money;
 				JsonData json = JsonMapper.ToObject(str.ToString());
-				UserModel.getInstance().UserVo.money = int.Parse( json["Money"].ToString()  );
+				UserModel.getInstance().UserVo.money = int.Parse( json["money"].ToString()  );
 
 				if(callBack != null ) callBack(result);
 			}

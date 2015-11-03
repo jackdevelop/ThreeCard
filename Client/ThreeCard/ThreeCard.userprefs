@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\BattleUI\DefenseEctypeUI\DefenceEntryManager_V1.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Utils\CardUtil.cs">
     <Files>
-      <File FileName="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\BattleUI\DefenseEctypeUI\DefenceEntryManager_V1.cs" Line="83" Column="28" />
+      <File FileName="Assets\Scripts\Behaviours\Sprite\FightResultBehviour.cs" Line="55" Column="3" />
+      <File FileName="Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" Line="210" Column="50" />
+      <File FileName="Assets\Scripts\Utils\CardUtil.cs" Line="58" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -11,6 +13,9 @@
       <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="6" />
       <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="33" />
       <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="37" />
+      <Breakpoint file="F:\workspace\unity\ThreeCard\Client\ThreeCard\Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" line="198" />
+      <Breakpoint file="F:\workspace\unity\ThreeCard\Client\ThreeCard\Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" line="193" />
+      <Breakpoint file="F:\workspace\unity\ThreeCard\Client\ThreeCard\Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" line="189" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

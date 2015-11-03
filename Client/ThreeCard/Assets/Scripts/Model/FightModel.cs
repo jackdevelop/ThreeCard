@@ -75,7 +75,7 @@ public class FightModel {
 		param.Add("token",UserModel.getInstance().UserVo.token);
 		param.Add("gameId",Config.GameId);
 
-
+		PopMaskMaskManager.show(0.5f);
 		//测试Action委托
 		//Action<object> action;
 		Action<object,object> action;

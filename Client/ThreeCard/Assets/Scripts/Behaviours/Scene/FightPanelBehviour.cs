@@ -179,7 +179,6 @@ public class FightPanelBehviour : MonoBehaviour {
 			if (FightModel.getInstance().getBenAmount() <= 0) {//下注数为0
 				PopMessageManager.show("current is 0");
 			}else{
-				PopMaskMaskManager.show(0.5f);
 				FightModel.getInstance().BetAction(betOkCallBack);
 			}
 		}
@@ -188,12 +187,12 @@ public class FightPanelBehviour : MonoBehaviour {
 		int result = (int)obj;
 		if(result == Config.CODE_SUCCESS){
 			int BenAmount = FightModel.getInstance().getBenAmount();
+			Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
 
-			/**
 			//生产牌
-			Dictionary<string,List<int>> CardsInfo = FightModel.getInstance().betVo.CardsInfo;
-			List<int> MasterCards = CardsInfo["MasterCards"];MasterCards.Sort();//默认List的排序是升序排序
-			List<int> GuestCards = CardsInfo["GuestCards"];GuestCards.Sort();
+			Dictionary<string,List<int>> CardsInfo = FightModel.getInstance().betVo.cardsInfo;
+			List<int> MasterCards = CardsInfo["masterCards"];MasterCards.Sort();//默认List的排序是升序排序
+			List<int> GuestCards = CardsInfo["guestCards"];GuestCards.Sort();
 
 			//庄家的
 			GameObject cardSpriteMaster = UITool.createUGUIImage("Sprite/sprite_CardSprite_" + MasterCards[0],Transform_CardSprite_MasterCards);
@@ -211,26 +210,26 @@ public class FightPanelBehviour : MonoBehaviour {
 			int[] compareResult = CardUtil.getCompareCards(MasterCards,GuestCards);
 			Txt_Point_MasterCards.text = compareResult[0] +" 点";
 			Txt_Point_GuestCards.text = compareResult[1] +" 点";
-**/
+
 
 			PopMaskMaskManager.show(0f);
-			StartCoroutine(BetIEnumerator());
+			StartCoroutine(BetIEnumerator(compareResult[0],compareResult[1]));
 		}
 	}
-	IEnumerator BetIEnumerator()
+	IEnumerator BetIEnumerator(int MasterPoint,int GuestPoint)
 	{
 
 		yield return new WaitForSeconds(1f);
 		PopMaskMaskManager.hide();
 
 		if(fightResultBehviour == null){
-			GameObject  instance  = PopUpManager.createPopUp (Obj_FightResult,0.5f);
+			GameObject  instance  = PopUpManager.createPopUp (Obj_FightResult,0.8f);
 			fightResultBehviour = instance.GetComponent<FightResultBehviour>();
 			EventTriggerListener.Get(fightResultBehviour.gameObject).onClick =Btn_BackClick;
 		}
-		int LoseAmount = FightModel.getInstance ().betVo.LoseAmount;
-		fightResultBehviour.init (LoseAmount);
-		Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
+		int LoseAmount = FightModel.getInstance ().betVo.loseAmount;
+		fightResultBehviour.init (MasterPoint,GuestPoint,LoseAmount);
+
 		/**
 		//yield return new WaitForSeconds(1f);
 

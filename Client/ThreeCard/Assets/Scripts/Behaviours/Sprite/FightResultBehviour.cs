@@ -15,8 +15,20 @@ using UnityEngine.Events;
 * @version 1.0
 */
 public class FightResultBehviour : MonoBehaviour {
-	/**输的钱数**/
-	public Text Txt_LoseAmount;
+	//点数
+	public Text Txt_MyPoint;//自己的
+	public Text Txt_MasterPoint;//庄家的
+
+
+	/**注数**/
+	public Text Txt_MyBetAmount;//下的注数
+	public Text Txt_LoseAmount;//输的注数
+
+	
+	/**我的 金币 **/
+	public Text Txt_Money_My;
+
+
 
 	/**返回按钮**/
 	public Button	Btn_Back;
@@ -33,10 +45,16 @@ public class FightResultBehviour : MonoBehaviour {
 	}
 	
 
-	public void init (int LoseAmount) {
+	public void init (int MasterPoin,int MyPoint,int LoseAmount) {
 		this.gameObject.SetActive(true);
 
-		Txt_LoseAmount.text = LoseAmount.ToString ();
+		Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString ();
+
+		Txt_MyBetAmount.text = System.Math.Abs(LoseAmount) + "";
+		Txt_LoseAmount.text = -LoseAmount + "";
+
+		Txt_MyPoint.text = MyPoint.ToString() ;//自己的
+		Txt_MasterPoint.text = MasterPoin.ToString();//庄家的
 
 		if (LoseAmount > 0) {
 			Img_failure.gameObject.SetActive(true);
@@ -52,11 +70,12 @@ public class FightResultBehviour : MonoBehaviour {
 
 	/**
 	 * 返回按钮结算 
-	 * */
+
 	private void Btn_BackClick(GameObject go){
 		//在这里监听按钮的点击事件
 		if(go == Btn_Back.gameObject){
 			this.gameObject.SetActive(false);
 		}
 	}
+	* */
 }
