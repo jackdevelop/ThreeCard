@@ -27,4 +27,5 @@ public class Config  {
 	public static int MaxBet = 500;
 	/**请求的url地址**/
 	public static string URL = "http://game_machine.meteor.com/";
+	//public static string URL = "http://baidu.com/";
 }

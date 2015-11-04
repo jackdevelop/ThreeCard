@@ -124,6 +124,10 @@ public class HttpLoadManager : MonoBehaviour
 		//第一种方法
 		//这是get请求的头参数 
 		Hashtable headers = form.headers;  
+		//headers.Remove ("Content-Type");
+		//headers.Add("Content-Type", "application/json"); 
+		//headers.Add("Content-Type", "application/x-www-form-urlencoded"); 
+
 		if(param.ContainsKey("token"))
 			headers.Add("Authorization",param["token"]);
 
