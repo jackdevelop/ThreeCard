@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskGuideUIManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Model\UserModel.cs">
     <Files>
-      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskFinishAwardBehaviour.cs" Line="6" Column="27" />
-      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskViewBehaviour.cs" Line="92" Column="64" />
-      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskGuideUIManager.cs" Line="10" Column="32" />
-      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskModel.cs" Line="333" Column="19" />
+      <File FileName="Assets\Scripts\Model\UserModel.cs" Line="65" Column="3" />
+      <File FileName="Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Behaviours\Scene\LoginPanelBehviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Manager\HttpLoadManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

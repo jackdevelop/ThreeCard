@@ -64,8 +64,6 @@ public class UserModel {
 		param.Add("password",passWorld);//Util.getMD5CodeByString(passWorld));
 
 		string ip = Util.getUserIp ()+"";
-		PopMessageManager.show (ip);
-
 		param.Add("macAddress",ip);
 		param.Add("ipAddress",ip);
 
@@ -96,6 +94,7 @@ public class UserModel {
 			if(result == Config.CODE_SUCCESS){
 				userVo.nickName = "张三";
 				userVo.userName = userName;
+				PlayerPrefs.SetString("userName",userVo.userName);
 				PlayerPrefs.SetString("nickName",userVo.nickName);
 				if(callBack != null ) callBack(result,str);
 			}else if(result == 1){

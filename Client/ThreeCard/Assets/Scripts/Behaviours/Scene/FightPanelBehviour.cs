@@ -53,15 +53,16 @@ public class FightPanelBehviour : MonoBehaviour {
 
 
 	//结算面板 
-	public UnityEngine.Object Obj_FightResult;
-	private FightResultBehviour fightResultBehviour;
+	//public UnityEngine.Object Obj_FightResult;
+	//private FightResultBehviour fightResultBehviour;
 	
 
 	void Awake() {
 		//Btn_Login = transform.Find("Btn_Login").GetComponent<Button>();//可以通过面板去查找 
 		EventTriggerListener.Get(Btn_Charge.gameObject).onClick =Btn_ChargeClick;
 		EventTriggerListener.Get(Btn_BetOk.gameObject).onClick =Btn_BetOkClick;
-
+		// 添加事件侦听
+		EventProtocol.dispatcher.addEventListener (EventName.PanelMask_CLICK, PanelMaskClickHandler);
 
 		for(int i =0;i<Btn_BetArr.Length;i++){
 			Button btn = Btn_BetArr[i];
@@ -173,12 +174,14 @@ public class FightPanelBehviour : MonoBehaviour {
 	/**
 	 * 下注确定 
 	 * */
+	private bool isBeting = false;
 	private void Btn_BetOkClick(GameObject go){
 		//在这里监听按钮的点击事件
 		if(go == Btn_BetOk.gameObject){
 			if (FightModel.getInstance().getBenAmount() <= 0) {//下注数为0
 				PopMessageManager.show("current is 0");
 			}else{
+				isBeting = true;
 				FightModel.getInstance().BetAction(betOkCallBack);
 			}
 		}
@@ -187,7 +190,7 @@ public class FightPanelBehviour : MonoBehaviour {
 		int result = (int)obj;
 		if(result == Config.CODE_SUCCESS){
 			int BenAmount = FightModel.getInstance().getBenAmount();
-			Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
+
 
 			//生产牌
 			Dictionary<string,List<int>> CardsInfo = FightModel.getInstance().betVo.cardsInfo;
@@ -197,15 +200,17 @@ public class FightPanelBehviour : MonoBehaviour {
 			//庄家的
 			GameObject cardSpriteMaster = UITool.createUGUIImage("Sprite/sprite_CardSprite_" + MasterCards[0],Transform_CardSprite_MasterCards);
 			cardSpriteMaster.transform.localPosition = new Vector3(-10,0,0);
+			cardSpriteMaster.transform.localScale= Vector3.one/2;		
 			cardSpriteMaster = UITool.createUGUIImage("Sprite/sprite_CardSprite_" + MasterCards[1],Transform_CardSprite_MasterCards);
 			cardSpriteMaster.transform.localPosition = new Vector3(10,0,0);
-
+			cardSpriteMaster.transform.localScale= Vector3.one/2;		
 			//自己的 
 			GameObject cardSpriteGuest = UITool.createUGUIImage("Sprite/sprite_CardSprite_" + GuestCards[0],Transform_CardSprite_GuestCards);
 			cardSpriteGuest.transform.localPosition = new Vector3(-10,0,0);
+			cardSpriteGuest.transform.localScale= Vector3.one/2;	
 			cardSpriteGuest = UITool.createUGUIImage("Sprite/sprite_CardSprite_" + GuestCards[1],Transform_CardSprite_GuestCards);
 			cardSpriteGuest.transform.localPosition = new Vector3(10,0,0);
-
+			cardSpriteGuest.transform.localScale= Vector3.one/2;	
 
 			int[] compareResult = CardUtil.getCompareCards(MasterCards,GuestCards);
 			Txt_Point_MasterCards.text = compareResult[0] +" 点";
@@ -220,8 +225,14 @@ public class FightPanelBehviour : MonoBehaviour {
 	{
 
 		yield return new WaitForSeconds(1f);
-		PopMaskMaskManager.hide();
+		//PopMaskMaskManager.hide();
 
+		int LoseAmount = FightModel.getInstance ().betVo.loseAmount;
+		Txt_Money_My.text = Txt_Money_My.text + "" + (-LoseAmount);
+
+
+		isBeting = false;
+		/**
 		if(fightResultBehviour == null){
 			GameObject  instance  = PopUpManager.createPopUp (Obj_FightResult,0.8f);
 			fightResultBehviour = instance.GetComponent<FightResultBehviour>();
@@ -229,20 +240,6 @@ public class FightPanelBehviour : MonoBehaviour {
 		}
 		int LoseAmount = FightModel.getInstance ().betVo.loseAmount;
 		fightResultBehviour.init (MasterPoint,GuestPoint,LoseAmount);
-
-		/**
-		//yield return new WaitForSeconds(1f);
-
-		string name = "sprite_failure";
-		if (GuestWin == Config.CODE_SUCCESS) {//客户输 
-			name = "sprite_victory";
-		}
-		//Transform_CardSprite_MasterCards.gameObject
-		GameObject cardSpriteGuest = UITool.createUGUIImage("Sprite/"+name,Transform_Results);
-		cardSpriteGuest.transform.localPosition = new Vector3(-10,0,0);
-
-		yield return new WaitForSeconds(2f);
-		cleanScene ();
 		**/
 	}
 
@@ -252,12 +249,23 @@ public class FightPanelBehviour : MonoBehaviour {
 
 
 
+
+	/**
+	 * 点击了遮罩
+	 * */
+	private void PanelMaskClickHandler(UEvent uEvent){
+		if (isBeting == false) {
+			cleanResultInfo (null);
+			PopMaskMaskManager.hide ();
+		}
+	}
+
 	/**
 	 * 清除场景界面 并清空数据 
 	 * */
-	private void Btn_BackClick(GameObject go){
+	private void cleanResultInfo(GameObject go){
 	//public void cleanScene(){
-		if(go == fightResultBehviour.gameObject){
+		//if(go == fightResultBehviour.gameObject){
 			UITool.ClearChild (Transform_CardSprite_MasterCards);
 			UITool.ClearChild (Transform_CardSprite_GuestCards);
 			UITool.ClearChild (Transform_Bet);
@@ -268,10 +276,10 @@ public class FightPanelBehviour : MonoBehaviour {
 
 			Txt_Current_Bet.text = "";
 			FightModel.getInstance ().setBenAmount (-FightModel.getInstance ().getBenAmount());
-
-			fightResultBehviour.gameObject.SetActive(false);
-		}
-
+			
+			Txt_Money_My.text = UserModel.getInstance ().UserVo.money.ToString();
+			//fightResultBehviour.gameObject.SetActive(false);
+		//}
 	}
 
 

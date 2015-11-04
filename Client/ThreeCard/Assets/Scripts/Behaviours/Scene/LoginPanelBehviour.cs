@@ -21,9 +21,9 @@ using UnityEngine.Events;
 public class LoginPanelBehviour : MonoBehaviour {
 
 	/**用户名**/
-	public Text Txt_Name;
+	public InputField Txt_Name;
 	/**密码**/
-	public Text Txt_Password;
+	public InputField Txt_Password;
 
 
 	/**登录按钮**/
@@ -39,10 +39,8 @@ public class LoginPanelBehviour : MonoBehaviour {
 		//Btn_Login = transform.Find("Btn_Login").GetComponent<Button>();//可以通过面板去查找 
 		EventTriggerListener.Get(Btn_Login.gameObject).onClick =Btn_LoginClick;
 
-
-		Txt_Name.text = PlayerPrefs.GetString("nickName");
+		Txt_Name.text = PlayerPrefs.GetString("userName");
 	}
-
 
 
 	/**
@@ -57,9 +55,6 @@ public class LoginPanelBehviour : MonoBehaviour {
 			}else{
 				string userName = Txt_Name.text;
 				string passWorld = Txt_Password.text;
-				//测试
-				userName = "test001";//"long";
-				passWorld = "123456";//"game_machine.";
 				UserModel.getInstance().LoginAction(userName,passWorld,loginCallBack);
 			}
 		}

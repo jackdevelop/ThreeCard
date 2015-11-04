@@ -133,15 +133,33 @@ public class PopAlertManager  {
  * */
 public class PopMaskMaskManager  {
 
-	public static PanelMaskBehaviours PanelMaskBehaviours;
+	private static PanelMaskBehaviours panelMaskBehaviours;
+
+
+	//唤醒时出发 
+	public static void Awake(){
+		if (panelMaskBehaviours == null) {
+			PanelMaskBehaviours currentPanelMaskBehaviours = create (RootCanvasBehviour.getInstance().Panel_UI_Tips.transform,1f);
+			panelMaskBehaviours = currentPanelMaskBehaviours;
+			hide ();
+			EventTriggerListener.Get(panelMaskBehaviours.gameObject).onClick =clickHandle;
+		}
+	}
+	private static void clickHandle(GameObject go){
+		if (go == panelMaskBehaviours.gameObject) {
+			Echo.Log("点击了遮罩");//点击了遮罩
+			UEvent ev = new UEvent(EventName.PanelMask_CLICK, null);
+			EventProtocol.dispatcher.dispatchEvent(ev, go);
+		}
+	}
 
 	/**
 	 * 显示
 	 * */
 	public static void show(float alpha){
-		if (PanelMaskBehaviours != null) {
-			PanelMaskBehaviours.gameObject.SetActive(true);
-			PanelMaskBehaviours.SetAlpha(alpha);
+		if (panelMaskBehaviours != null) {
+			panelMaskBehaviours.gameObject.SetActive(true);
+			panelMaskBehaviours.SetAlpha(alpha);
 		}
 	}
 
@@ -149,8 +167,8 @@ public class PopMaskMaskManager  {
 	 * 隐藏
 	 * */
 	public static void hide(){
-		if (PanelMaskBehaviours != null) {
-			PanelMaskBehaviours.gameObject.SetActive(false);
+		if (panelMaskBehaviours != null) {
+			panelMaskBehaviours.gameObject.SetActive(false);
 		}
 	}
 
@@ -164,10 +182,10 @@ public class PopMaskMaskManager  {
 	public static PanelMaskBehaviours create(Transform Transform_parent,float alpha){
 		Object obj = Resources.Load("Prefabs/UI/Commons/Prefabs_UI_Mask");
 		GameObject instance = UITool.createUGUI(obj,Transform_parent);
-		PanelMaskBehaviours PanelMaskBehaviours = instance.GetComponent<PanelMaskBehaviours>();
-		PanelMaskBehaviours.SetAlpha (alpha);
+		PanelMaskBehaviours onePanelMaskBehaviours = instance.GetComponent<PanelMaskBehaviours>();
+		onePanelMaskBehaviours.SetAlpha (alpha);
 
-		return PanelMaskBehaviours;
+		return onePanelMaskBehaviours;
 	}
 }
 

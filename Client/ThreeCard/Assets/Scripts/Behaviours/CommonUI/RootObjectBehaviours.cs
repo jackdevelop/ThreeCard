@@ -29,9 +29,7 @@ public class RootObjectBehaviours : MonoBehaviour
 
 
 		//mask 遮罩 
-		PanelMaskBehaviours PanelMaskBehaviours = PopMaskMaskManager.create (RootCanvasBehviour.getInstance().Panel_UI_Tips.transform,100f);
-		PopMaskMaskManager.PanelMaskBehaviours = PanelMaskBehaviours;
-		PopMaskMaskManager.hide ();
+		PopMaskMaskManager.Awake ();
 
 
 
