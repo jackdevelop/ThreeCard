@@ -228,8 +228,11 @@ public class FightPanelBehviour : MonoBehaviour {
 		//PopMaskMaskManager.hide();
 
 		int LoseAmount = FightModel.getInstance ().betVo.loseAmount;
-		Txt_Money_My.text = Txt_Money_My.text + "" + (-LoseAmount);
-
+		if (LoseAmount > 0) {
+			Txt_Money_My.text = Txt_Money_My.text + "-" + LoseAmount;
+		} else {
+			Txt_Money_My.text = Txt_Money_My.text + "+" + Math.Abs( LoseAmount );
+		}
 
 		isBeting = false;
 		/**
