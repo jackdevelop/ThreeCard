@@ -63,9 +63,9 @@ public class PanelMessageBehaviours : MonoBehaviour {
 	IEnumerator StartDestroyItem(GameObject obj,float time){ 
 		yield return new WaitForSeconds(time);
 		if (obj != null) {
-			obj.transform.DOLocalMoveY(Screen.height+10,2f,false);
+			obj.transform.DOLocalMoveY(Screen.height+10,4f,false);
 			//TweenAlpha.Begin (obj, 0.5f, 0);
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds(4f);
 			if(obj!=null) Destroy(obj);	
 		}   
 	}

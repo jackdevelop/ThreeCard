@@ -77,5 +77,5 @@ public class FightResultBehviour : MonoBehaviour {
 			this.gameObject.SetActive(false);
 		}
 	}
-	* */
+	**/
 }

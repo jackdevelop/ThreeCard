@@ -1,22 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Utils\CardUtil.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskGuideUIManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Behaviours\Sprite\FightResultBehviour.cs" Line="55" Column="3" />
-      <File FileName="Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" Line="210" Column="50" />
-      <File FileName="Assets\Scripts\Utils\CardUtil.cs" Line="58" Column="2" />
+      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskFinishAwardBehaviour.cs" Line="6" Column="27" />
+      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskViewBehaviour.cs" Line="92" Column="64" />
+      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskGuideUIManager.cs" Line="10" Column="32" />
+      <File FileName="..\..\..\..\..\jianghu\code\brance\branches\Assets\Scripts\Task\TaskModel.cs" Line="333" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="30" />
-      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="6" />
-      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="33" />
-      <Breakpoint file="C:\Users\Administrator\Desktop\jianghu\JiangHu\Assets\Scripts\UI\TownUI\SysFuntionButton\EmailBtnEff.cs" line="37" />
-      <Breakpoint file="F:\workspace\unity\ThreeCard\Client\ThreeCard\Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" line="198" />
-      <Breakpoint file="F:\workspace\unity\ThreeCard\Client\ThreeCard\Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" line="193" />
-      <Breakpoint file="F:\workspace\unity\ThreeCard\Client\ThreeCard\Assets\Scripts\Behaviours\Scene\FightPanelBehviour.cs" line="189" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

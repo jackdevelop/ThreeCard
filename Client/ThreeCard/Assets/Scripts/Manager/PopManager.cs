@@ -129,7 +129,7 @@ public class PopAlertManager  {
  *  其他每个页面ui需要遮罩单个ui  需要自动手动创建 
  * 
  * 说明：ugui如果需要其禁止接触鼠标事件 
- * 	加個UGUI內建的CanvasGroup組件, 把Interactable和Blocks Raycasts選項取消。
+ * 	加個UGUI內建的 CanvasGroup 組件, 把Interactable和Blocks Raycasts選項取消。
  * */
 public class PopMaskMaskManager  {
 

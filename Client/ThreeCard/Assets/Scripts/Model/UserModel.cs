@@ -56,13 +56,20 @@ public class UserModel {
 	 * */
 	public void LoginAction(string userName,string passWorld,Action<object,object> callBack){
 
+		PopMaskMaskManager.show (0.5f);
+
 		Dictionary<string,object> param = new Dictionary<string,object>();
 		//param.Add("Action","LoginAction");
 		param.Add("username",userName);
 		param.Add("password",passWorld);//Util.getMD5CodeByString(passWorld));
-		param.Add("macAddress",Util.getUserIp());
-		param.Add("ipAddress",Util.getUserIp());
 
+		string ip = Util.getUserIp ()+"";
+		PopMessageManager.show (ip);
+
+		param.Add("macAddress",ip);
+		param.Add("ipAddress",ip);
+
+		//PopMessageManager.show ();
 		//Echo.Log("mac:" + Util.getUserIp());
 		//Echo.Log("passworld:" + Util.getMD5CodeByString(passWorld));
 		/**
@@ -79,7 +86,7 @@ public class UserModel {
 		};
 		**/
 
-		PopMaskMaskManager.show (0.5f);
+
 		//测试Action委托
 		Action<object,object> actionFun;
 		actionFun = (object data,object str) => {

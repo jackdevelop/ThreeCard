@@ -61,21 +61,23 @@ public class Util
 			　　}
 		}
 		**/
-
-		NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
-		foreach(NetworkInterface adapter in adapters){
-			if(adapter.Supports(NetworkInterfaceComponent.IPv4)){
-				UnicastIPAddressInformationCollection uniCast = adapter.GetIPProperties().UnicastAddresses;
-				if(uniCast.Count > 0 ){
-					foreach(UnicastIPAddressInformation uni in uniCast){
-						if(uni.Address.AddressFamily == AddressFamily.InterNetwork){
-							userIp = uni.Address.ToString();
+		#if UNITY_STANDALONE_WIN || UNITY_EDITOR  //windows平台和web平台
+			NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
+			foreach(NetworkInterface adapter in adapters){
+				if(adapter.Supports(NetworkInterfaceComponent.IPv4)){
+					UnicastIPAddressInformationCollection uniCast = adapter.GetIPProperties().UnicastAddresses;
+					if(uniCast.Count > 0 ){
+						foreach(UnicastIPAddressInformation uni in uniCast){
+							if(uni.Address.AddressFamily == AddressFamily.InterNetwork){
+								userIp = uni.Address.ToString();
+							}
 						}
 					}
 				}
 			}
-		}
-
+		#elif UNITY_ANDROID   //安卓
+			userIp = "192.168.132";
+		#endif
 
 		return userIp;
 	}
