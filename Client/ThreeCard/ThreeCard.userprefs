@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\HttpLoadManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Manager\HttpLoadManager.cs" Line="127" Column="5" />
+      <File FileName="Assets\Scripts\Manager\HttpLoadManager.cs" Line="138" Column="3" />
+      <File FileName="Assets\Scripts\Config\Config.cs" Line="29" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

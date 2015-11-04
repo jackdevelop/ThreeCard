@@ -45,6 +45,7 @@ public class PanelMessageBehaviours : MonoBehaviour {
 		Text Txt_label = itemPref.GetComponentInChildren<Text>(); 
 		Txt_label.text = text;
 
+
 		/**
 		if (label.height > label.fontSize) {
 			label.alignment = NGUIText.Alignment.Left;

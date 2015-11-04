@@ -141,11 +141,11 @@ public class HttpLoadManager : MonoBehaviour
 			string data = "";
 			if (www.error != null) {
 				data = "{'result':-100,'msg':'"+ www.error +"'}";
+				//PopMessageManager.show(data);
 			} else {
 				data= www.text;
+				//PopMessageManager.show("ok");
 			}
-
-
 
 			if (callBack != null) {
 				Echo.Log("callBack:" + data);
