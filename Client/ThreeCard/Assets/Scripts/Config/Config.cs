@@ -28,4 +28,5 @@ public class Config  {
 	/**请求的url地址**/
 	public static string URL = "http://game_machine.meteor.com/";
 	//public static string URL = "107.21.116.12/";
+	//public static string URL = "http://d8d20efb.ngrok.io/";
 }

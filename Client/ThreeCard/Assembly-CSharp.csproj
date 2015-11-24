@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Config\SceneConfig.cs" />
      <Compile Include="Assets\Scripts\Manager\HttpLoad.cs" />
      <Compile Include="Assets\Scripts\Manager\HttpLoadManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\LanguageManager.cs" />
      <Compile Include="Assets\Scripts\Manager\PopManager.cs" />
      <Compile Include="Assets\Scripts\Manager\ResourcesManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SingletonManager.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Scripts\Model\FightModel.cs" />
      <Compile Include="Assets\Scripts\Model\SetModel.cs" />
      <Compile Include="Assets\Scripts\Model\UserModel.cs" />
+     <Compile Include="Assets\Scripts\Test\DocmentNote.cs" />
      <Compile Include="Assets\Scripts\Test\test.cs" />
      <Compile Include="Assets\Scripts\Utils\CardUtil.cs" />
      <Compile Include="Assets\Scripts\Utils\Echo.cs" />
@@ -88,6 +90,7 @@
      <Compile Include="Assets\Scripts\Utils\Event\UEventDispatcher.cs" />
      <Compile Include="Assets\Scripts\Utils\Event\UEventListener.cs" />
      <Compile Include="Assets\Scripts\Utils\EventTriggerListener.cs" />
+     <Compile Include="Assets\Scripts\Utils\Instance.cs" />
      <Compile Include="Assets\Scripts\Utils\Platform.cs" />
      <Compile Include="Assets\Scripts\Utils\UITool.cs" />
      <Compile Include="Assets\Scripts\Utils\Util.cs" />
@@ -98,6 +101,7 @@
      <Compile Include="Assets\Scripts\Vo\UserVo.cs" />
      <None Include="Assets\DOTween\readme.txt" />
      <None Include="Assets\Shaders\UI\UIButton.shader" />
+     <None Include="Assets\Data\Excel\Res\MonsterConfig\MonsterConfig.xml" />
      <None Include="Assets\Docment\说明.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
